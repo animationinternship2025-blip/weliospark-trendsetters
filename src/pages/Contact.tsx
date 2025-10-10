@@ -144,7 +144,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email Us</h3>
-                      <p className="text-muted-foreground">hello@weliospark.com</p>
+                      <p className="text-muted-foreground">Weliospark.info@gmail.com</p>
                     </div>
                   </div>
 
@@ -154,7 +154,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Call Us</h3>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">+91 9392439522</p>
                     </div>
                   </div>
 

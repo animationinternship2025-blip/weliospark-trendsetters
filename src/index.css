@@ -37,6 +37,9 @@ All colors MUST be HSL.
     --ring: 215 100% 16%;
 
     --radius: 0.75rem;
+    
+    /* Custom shadows */
+    --shadow-navy: 0 10px 20px hsla(215, 100%, 16%, 0.5);
   }
 }
 
