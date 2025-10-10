@@ -6,34 +6,36 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
+    message: ""
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+      description: "We'll get back to you within 24 hours."
     });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: ""
+    });
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
@@ -63,65 +65,27 @@ const Contact = () => {
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Your Name
                     </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-card border-border focus:border-primary"
-                    />
+                    <Input id="name" name="name" type="text" placeholder="John Doe" value={formData.name} onChange={handleChange} required className="w-full bg-card border-border focus:border-primary" />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Email Address
                     </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-card border-border focus:border-primary"
-                    />
+                    <Input id="email" name="email" type="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} required className="w-full bg-card border-border focus:border-primary" />
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium mb-2">
                       Phone Number
                     </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+1 (555) 123-4567"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full bg-card border-border focus:border-primary"
-                    />
+                    <Input id="phone" name="phone" type="tel" placeholder="+1 (555) 123-4567" value={formData.phone} onChange={handleChange} className="w-full bg-card border-border focus:border-primary" />
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Your Message
                     </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell us about your project..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full bg-card border-border focus:border-primary resize-none"
-                    />
+                    <Textarea id="message" name="message" placeholder="Tell us about your project..." value={formData.message} onChange={handleChange} required rows={6} className="w-full bg-card border-border focus:border-primary resize-none" />
                   </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
-                  >
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/50">
                     Send Message
                   </Button>
                 </form>
@@ -144,7 +108,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email Us</h3>
-                      <p className="text-muted-foreground">Weliospark.info@gmail.com</p>
+                      <p className="text-muted-foreground">info.Weliospark@gmail.com</p>
                     </div>
                   </div>
 
@@ -175,20 +139,10 @@ const Contact = () => {
                 <div className="pt-8">
                   <h3 className="font-semibold mb-4">Follow Us</h3>
                   <div className="flex space-x-4">
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                    >
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110">
                       <Instagram size={20} />
                     </a>
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                    >
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110">
                       <Linkedin size={20} />
                     </a>
                   </div>
@@ -200,8 +154,6 @@ const Contact = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
