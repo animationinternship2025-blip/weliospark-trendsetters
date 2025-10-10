@@ -29,7 +29,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 animate-fade-in-up delay-400">
-            Fresh perspectives. Authentic engagement. Real results. We speak Gen Z because we are Gen Z.
+            Fresh perspectives. Authentic engagement. Real results. We understand trends because we live and breathe social media.
           </p>
 
           {/* CTA Buttons */}
