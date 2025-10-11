@@ -6,6 +6,29 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters")
+    .regex(/^[a-zA-Z\s'-]+$/, "Name can only contain letters, spaces, hyphens, and apostrophes"),
+  email: z.string()
+    .trim()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address")
+    .max(255, "Email must be less than 255 characters"),
+  phone: z.string()
+    .trim()
+    .regex(/^\+?[1-9]\d{9,14}$/, "Please enter a valid phone number (10-15 digits)")
+    .optional()
+    .or(z.literal("")),
+  message: z.string()
+    .trim()
+    .min(1, "Message is required")
+    .max(1000, "Message must be less than 1000 characters")
+});
 const Contact = () => {
   const {
     toast
@@ -16,8 +39,34 @@ const Contact = () => {
     phone: "",
     message: ""
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    const result = contactSchema.safeParse(formData);
+    
+    if (!result.success) {
+      // Extract errors from zod validation
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0].toString()] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      toast({
+        title: "Validation Error",
+        description: "Please check the form for errors.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Clear errors on successful validation
+    setErrors({});
+    
     toast({
       title: "Message Sent!",
       description: "We'll get back to you within 24 hours."
@@ -65,25 +114,68 @@ const Contact = () => {
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Your Name
                     </label>
-                    <Input id="name" name="name" type="text" placeholder="John Doe" value={formData.name} onChange={handleChange} required className="w-full bg-card border-border focus:border-primary" />
+                    <Input 
+                      id="name" 
+                      name="name" 
+                      type="text" 
+                      placeholder="John Doe" 
+                      value={formData.name} 
+                      onChange={handleChange} 
+                      maxLength={100}
+                      required 
+                      className={`w-full bg-card border-border focus:border-primary ${errors.name ? 'border-destructive' : ''}`}
+                    />
+                    {errors.name && <p className="text-sm text-destructive mt-1">{errors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Email Address
                     </label>
-                    <Input id="email" name="email" type="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} required className="w-full bg-card border-border focus:border-primary" />
+                    <Input 
+                      id="email" 
+                      name="email" 
+                      type="email" 
+                      placeholder="john@example.com" 
+                      value={formData.email} 
+                      onChange={handleChange} 
+                      maxLength={255}
+                      required 
+                      className={`w-full bg-card border-border focus:border-primary ${errors.email ? 'border-destructive' : ''}`}
+                    />
+                    {errors.email && <p className="text-sm text-destructive mt-1">{errors.email}</p>}
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium mb-2">
                       Phone Number
                     </label>
-                    <Input id="phone" name="phone" type="tel" placeholder="+1 (555) 123-4567" value={formData.phone} onChange={handleChange} className="w-full bg-card border-border focus:border-primary" />
+                    <Input 
+                      id="phone" 
+                      name="phone" 
+                      type="tel" 
+                      placeholder="+919392439522" 
+                      value={formData.phone} 
+                      onChange={handleChange} 
+                      maxLength={16}
+                      className={`w-full bg-card border-border focus:border-primary ${errors.phone ? 'border-destructive' : ''}`}
+                    />
+                    {errors.phone && <p className="text-sm text-destructive mt-1">{errors.phone}</p>}
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Your Message
                     </label>
-                    <Textarea id="message" name="message" placeholder="Tell us about your project..." value={formData.message} onChange={handleChange} required rows={6} className="w-full bg-card border-border focus:border-primary resize-none" />
+                    <Textarea 
+                      id="message" 
+                      name="message" 
+                      placeholder="Tell us about your project..." 
+                      value={formData.message} 
+                      onChange={handleChange} 
+                      maxLength={1000}
+                      required 
+                      rows={6} 
+                      className={`w-full bg-card border-border focus:border-primary resize-none ${errors.message ? 'border-destructive' : ''}`}
+                    />
+                    {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
                   </div>
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/50">
                     Send Message
