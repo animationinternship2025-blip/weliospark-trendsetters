@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
-            <img src={logo} alt="WelioSpark" className="h-12 w-auto mb-4" />
+            <img src={logo} alt="WelioSpark" className="h-56 w-auto mb-4" />
             <p className="text-muted-foreground text-sm max-w-md">
               Fresh digital marketing by Gen Z for Gen Z. We understand trends because we're the actual social media users.
             </p>
