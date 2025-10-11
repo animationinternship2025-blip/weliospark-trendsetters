@@ -39,11 +39,32 @@ const Contact = () => {
     phone: "",
     message: ""
   });
+  const [honeypot, setHoneypot] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Honeypot check - if filled, it's likely a bot
+    if (honeypot) {
+      console.log("Bot detected via honeypot");
+      return;
+    }
+
+    // Rate limiting check - max 1 submission per minute
+    const lastSubmission = localStorage.getItem("lastContactSubmit");
+    if (lastSubmission) {
+      const timeDiff = Date.now() - parseInt(lastSubmission);
+      if (timeDiff < 60000) { // 60 seconds
+        toast({
+          title: "Please Wait",
+          description: "You can only submit once per minute. Please try again shortly.",
+          variant: "destructive"
+        });
+        return;
+      }
+    }
     
     // Validate form data
     const result = contactSchema.safeParse(formData);
@@ -71,7 +92,8 @@ const Contact = () => {
     
     try {
       // Submit to Formspree
-      const response = await fetch("https://formspree.io/f/movkkkll", {
+      const formspreeUrl = import.meta.env.VITE_FORMSPREE_URL || "https://formspree.io/f/movkkkll";
+      const response = await fetch(formspreeUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -80,6 +102,9 @@ const Contact = () => {
       });
 
       if (response.ok) {
+        // Store submission timestamp for rate limiting
+        localStorage.setItem("lastContactSubmit", Date.now().toString());
+        
         toast({
           title: "Message Sent!",
           description: "We'll get back to you within 24 hours."
@@ -203,6 +228,21 @@ const Contact = () => {
                     />
                     {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
                   </div>
+                  
+                  {/* Honeypot field - hidden from users but visible to bots */}
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <Input
+                      id="website"
+                      name="website"
+                      type="text"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+                  
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
