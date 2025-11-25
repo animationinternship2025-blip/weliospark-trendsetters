@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <img src={logo} alt="WelioSpark" className="h-56 w-auto mb-4" />
             <p className="text-muted-foreground text-sm max-w-md">
-              Fresh digital marketing by Gen Z for Gen Z. We understand trends because we're the actual social media users.
+              Professional digital marketing agency delivering data-driven strategies and measurable ROI for businesses of all sizes.
             </p>
           </div>
 

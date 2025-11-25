@@ -16,20 +16,20 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-8 animate-fade-in">
             <Sparkles size={16} />
-            <span className="text-sm font-medium">Digital • Strategy • Analyze</span>
+            <span className="text-sm font-medium">Data-Driven • Results-Focused • ROI-First</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
-            We are <span className="text-primary">freshers</span> in marketing —
+            Elevate Your Brand with <span className="text-primary">Data-Driven</span> Marketing
           </h1>
           <h2 className="text-3xl md:text-5xl font-semibold mb-8 text-muted-foreground animate-fade-in-up delay-200">
-            but we know the trends because we're the actual social media users.
+            Proven strategies that deliver measurable ROI for businesses of all sizes.
           </h2>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 animate-fade-in-up delay-400">
-            Fresh perspectives. Authentic engagement. Real results. We understand trends because we live and breathe social media.
+            Strategic planning. Performance analytics. Measurable growth. We turn marketing investments into revenue with data-backed strategies.
           </p>
 
           {/* CTA Buttons */}
