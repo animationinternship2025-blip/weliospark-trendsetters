@@ -6,23 +6,23 @@ const AboutSection = () => {
   const features = [
     {
       icon: Users,
-      title: "Gen Z Experts",
-      description: "We understand Gen Z and social-first marketing because we are Gen Z.",
+      title: "Strategic Expertise",
+      description: "We leverage industry best practices and proven methodologies to deliver exceptional marketing results.",
     },
     {
       icon: TrendingUp,
-      title: "Real Engagement",
-      description: "Our campaigns are trend-based, authentic, and designed to engage real audiences.",
+      title: "Data-Driven Growth",
+      description: "Our campaigns are optimized using advanced analytics and performance metrics to maximize ROI.",
     },
     {
       icon: Lightbulb,
-      title: "Fresh Ideas",
-      description: "We bring creative, innovative ideas that stand out in crowded feeds.",
+      title: "Creative Solutions",
+      description: "We develop innovative marketing strategies that differentiate your brand and capture attention.",
     },
     {
       icon: Target,
       title: "Measurable Results",
-      description: "Every campaign is optimized for performance with data-driven insights.",
+      description: "Every campaign is tracked, analyzed, and optimized for tangible business outcomes and growth.",
     },
   ];
 
@@ -36,8 +36,8 @@ const AboutSection = () => {
               Why Trust <span className="text-primary">WelioSpark</span>?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              WelioSpark understands Gen Z and social-first marketing. Our campaigns are trend-based, 
-              authentic, and designed to engage real audiences.
+              WelioSpark delivers comprehensive digital marketing solutions with a focus on measurable ROI, 
+              strategic planning, and data-driven optimization for businesses of all sizes.
             </p>
           </div>
 

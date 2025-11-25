@@ -21,15 +21,15 @@ const Hero = () => {
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
-            We are <span className="text-primary">freshers</span> in marketing —
+            Data-Driven <span className="text-primary">Marketing</span> Strategies
           </h1>
           <h2 className="text-3xl md:text-5xl font-semibold mb-8 text-muted-foreground animate-fade-in-up delay-200">
-            but we know the trends because we're the actual social media users.
+            that deliver measurable ROI for your business.
           </h2>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 animate-fade-in-up delay-400">
-            Fresh perspectives. Authentic engagement. Real results. We understand trends because we live and breathe social media.
+            Full-service digital marketing agency specializing in strategic campaigns, analytics-driven optimization, and proven results for businesses of all sizes.
           </p>
 
           {/* CTA Buttons */}

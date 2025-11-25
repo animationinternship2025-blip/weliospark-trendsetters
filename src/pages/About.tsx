@@ -4,11 +4,11 @@ import { Users, Target, Lightbulb, Award } from "lucide-react";
 
 const About = () => {
   const values = [
-    {
-      icon: Users,
-      title: "Authentic Connection",
-      description: "We believe in creating genuine connections between brands and their audiences through relatable, trend-driven content.",
-    },
+      {
+        icon: Users,
+        title: "Client Partnership",
+        description: "We build lasting partnerships with our clients, working collaboratively to understand goals and deliver strategic marketing solutions.",
+      },
     {
       icon: Target,
       title: "Results-Driven",
@@ -22,7 +22,7 @@ const About = () => {
     {
       icon: Award,
       title: "Quality & Excellence",
-      description: "Despite being freshers, we're committed to delivering professional, high-quality work that exceeds expectations.",
+      description: "We're committed to delivering exceptional, professional work that exceeds expectations and drives business growth.",
     },
   ];
 
@@ -38,8 +38,8 @@ const About = () => {
               About <span className="text-primary">WelioSpark</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We're freshers in marketing, but we know the trends because we're the actual social media users. 
-              Our youth isn't a weakness—it's our superpower.
+              A full-service digital marketing agency committed to delivering exceptional results through 
+              strategic planning, creative excellence, and data-driven optimization.
             </p>
           </div>
         </div>
@@ -52,20 +52,19 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Our Story</h2>
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p>
-                WelioSpark was born from a simple realization: the most powerful marketing insights come from 
-                the people who actually use social media every day. As Gen Z digital natives, we don't just 
-                study trends—we live them, create them, and share them.
+                WelioSpark was founded on the principle that successful digital marketing requires a perfect 
+                blend of strategic thinking, creative execution, and data-driven optimization. We partner with 
+                businesses of all sizes to develop comprehensive marketing strategies that drive real, measurable results.
               </p>
               <p>
-                While we're freshers in the professional marketing world, we bring something more valuable than 
-                years of traditional experience: authentic understanding of what makes content resonate with 
-                today's audiences. We know what stops the scroll, what drives engagement, and what builds genuine 
-                community.
+                Our team brings together expertise across multiple disciplines—from paid advertising and SEO to 
+                content creation and analytics. We believe in understanding your business goals first, then 
+                crafting customized strategies that align with your objectives and deliver tangible ROI.
               </p>
               <p>
-                Our approach combines data-driven strategy with creative authenticity. We use professional tools 
-                and proven techniques, but we infuse every campaign with the fresh perspective and innovative 
-                thinking that only young, passionate marketers can provide.
+                Our approach combines proven marketing methodologies with innovative tactics and cutting-edge 
+                tools. We stay ahead of industry trends, continuously test and optimize campaigns, and maintain 
+                transparent communication to ensure your marketing investment delivers maximum value.
               </p>
             </div>
           </div>
@@ -101,13 +100,13 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              To bridge the gap between brands and Gen Z audiences through authentic, trend-driven digital 
-              marketing that drives real engagement and measurable results.
+              To empower businesses with data-driven digital marketing strategies that deliver measurable ROI, 
+              sustainable growth, and competitive advantage in the digital landscape.
             </p>
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-8">
               <p className="text-lg text-foreground">
-                "We're not just marketing to Gen Z—we ARE Gen Z. That's our edge, our authenticity, 
-                and our commitment to you."
+                "We combine strategic expertise with creative innovation to deliver marketing solutions 
+                that drive real business results and long-term success."
               </p>
             </div>
           </div>
