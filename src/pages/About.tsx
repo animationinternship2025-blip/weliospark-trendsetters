@@ -38,8 +38,8 @@ const About = () => {
               About <span className="text-primary">WelioSpark</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              A full-service digital marketing agency committed to delivering exceptional results through 
-              strategic planning, creative excellence, and data-driven optimization.
+              Fresh perspectives. Authentic engagement.Real results.
+              We understand trends because we lives and breathe social media
             </p>
           </div>
         </div>
@@ -100,8 +100,8 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              To empower businesses with data-driven digital marketing strategies that deliver measurable ROI, 
-              sustainable growth, and competitive advantage in the digital landscape.
+              To empower businesses with We are freshers in marketing - but we know
+              the trends because we're the actual social media users.
             </p>
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-8">
               <p className="text-lg text-foreground">
